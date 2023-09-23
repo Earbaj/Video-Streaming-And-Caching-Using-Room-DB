@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 import java.io.IOException
 
 class DetailsViewModel(application: Application): AndroidViewModel(application) {
+
     private val _playlist = MutableLiveData<List<Video>>()
     val playlist: LiveData<List<Video>> = _playlist
 
