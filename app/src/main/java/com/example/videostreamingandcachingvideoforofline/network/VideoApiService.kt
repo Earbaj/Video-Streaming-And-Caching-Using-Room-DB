@@ -9,7 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-interface DevbyteService {
+interface VideoService {
     @GET("devbytes.json")
     fun getPlaylist(): Deferred<NetworkVideoContainer>
 }
@@ -33,5 +33,5 @@ object Network {
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .build()
 
-    val devbytes = retrofit.create(DevbyteService::class.java)
+    val videobytes = retrofit.create(VideoService::class.java)
 }
