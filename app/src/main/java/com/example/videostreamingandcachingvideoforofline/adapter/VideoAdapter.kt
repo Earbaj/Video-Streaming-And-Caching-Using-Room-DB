@@ -8,8 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.videostreamingandcachingvideoforofline.R
 import com.example.videostreamingandcachingvideoforofline.databinding.ListItemBinding
 import com.example.videostreamingandcachingvideoforofline.model.Video
+import com.example.videostreamingandcachingvideoforofline.utils.VideoClick
 
-class VideoAdapter : RecyclerView.Adapter<VideoViewHolder>(){
+class VideoAdapter(val videoClick: VideoClick) : RecyclerView.Adapter<VideoViewHolder>(){
 
 
     /**
@@ -46,6 +47,7 @@ class VideoAdapter : RecyclerView.Adapter<VideoViewHolder>(){
     override fun onBindViewHolder(holder: VideoViewHolder, position: Int) {
         holder.viewDataBinding.also {
             it.video = videos[position]
+            it.videoCallback = videoClick
         }
     }
 }
