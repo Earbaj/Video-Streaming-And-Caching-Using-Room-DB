@@ -59,6 +59,10 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     // Glide for images
     implementation("com.github.bumptech.glide:glide:4.8.0")
+    // Room database
+    implementation("androidx.room:room-runtime:2.2.5")
+    kapt("androidx.room:room-compiler:2.2.5")
+
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
     testImplementation("junit:junit:4.13.2")
