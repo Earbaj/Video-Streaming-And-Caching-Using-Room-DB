@@ -62,9 +62,16 @@ dependencies {
     // Room database
     implementation("androidx.room:room-runtime:2.2.5")
     kapt("androidx.room:room-compiler:2.2.5")
-
+    //For navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
+    //For transformation
+    implementation("androidx.room:room-ktx:2.2.5")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
+    // ViewModel and LiveData (arch components)
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
