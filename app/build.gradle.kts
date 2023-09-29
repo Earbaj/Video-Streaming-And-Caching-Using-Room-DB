@@ -45,6 +45,7 @@ android {
 dependencies {
 
     val activity_version = "1.7.2"
+    val version_work = "1.0.1"
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -74,6 +75,8 @@ dependencies {
     // ViewModel and LiveData (arch components)
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+    //Workmanager
+    implementation("android.arch.work:work-runtime-ktx:$version_work")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
