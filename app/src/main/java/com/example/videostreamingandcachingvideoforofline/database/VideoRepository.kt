@@ -7,6 +7,7 @@ import com.example.videostreamingandcachingvideoforofline.model.asDatabaseModel
 import com.example.videostreamingandcachingvideoforofline.network.Network
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import timber.log.Timber
 
 class VideoRepository(private val database: VideoDatabase) {
     /**
@@ -31,8 +32,12 @@ class VideoRepository(private val database: VideoDatabase) {
      */
     suspend fun refreshVideos() {
         withContext(Dispatchers.IO) {
-            val playlist = Network.videobytes.getPlaylist().await()
-            database.VideoDao().insertAll(*playlist.asDatabaseModel())
+            try{
+                val playlist = Network.videobytes.getPlaylist().await()
+                database.VideoDao().insertAll(*playlist.asDatabaseModel())
+            }catch (e: Exception){
+                Timber.e("Updated playlist not available")
+            }
         }
     }
 
